@@ -1,0 +1,17 @@
+class Solution {
+    public int maxProfit(int[] v) {
+        int x=v[0];
+        int a=0;
+        int b=0;
+        for(int i=1;i<v.length;i++){
+            if(x>v[i]){
+                x=v[i];
+            }
+            a=v[i]-x;
+            if(a>b)
+                b=a;
+        }
+        
+        return b;
+    }
+}
