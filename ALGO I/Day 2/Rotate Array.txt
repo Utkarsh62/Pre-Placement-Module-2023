@@ -1,0 +1,9 @@
+class Solution:
+    def rotate(self, nums: List[int], k: int) -> None:
+        """
+        Do not return anything, modify nums in-place instead.
+        """
+        n= collections.deque(nums)
+        n.rotate(k)
+        for i in range(len(nums)):
+            nums[i]=n[i]
