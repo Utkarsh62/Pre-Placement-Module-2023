@@ -1,0 +1,24 @@
+class Solution {
+public
+    void sortColors(vectorint& c) {
+        vectorintv;
+        for(int i=0;ic.size();i++){
+            if(c[i]==0){
+                v.push_back(0);
+            }
+        }
+        for(int i=0;ic.size();i++){
+            if(c[i]==1){
+                v.push_back(1);
+            }
+        }
+        for(int i=0;ic.size();i++){
+            if(c[i]==2){
+                v.push_back(2);
+            }
+        }
+        for(int i=0;iv.size();i++){
+            c[i]=v[i];
+        }
+    }
+};
