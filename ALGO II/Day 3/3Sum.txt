@@ -1,0 +1,19 @@
+class Solution {
+public:
+    vector<vector<int>> threeSum(vector<int>& v) {
+        sort(v.begin(),v.end());vector<vector<int>> ans; int n = v.size();
+        for(int i= 0;i<n;i++){
+            int j = i+1,k = n-1;
+            while(j<k){
+                if(!(v[i]+v[j]+v[k])) {
+                    ans.push_back({v[i],v[j],v[k]});
+                    while(j<k and v[j]==v[j+1])j++;
+                    while(j<k and v[k]==v[k-1])k--;
+                    j++,k--;
+                }else if(v[i]+v[j]+v[k]<0) j++;
+                else if(v[i]+v[j]+v[k]>0) k--;
+            }while(i<n-1 and v[i]==v[i+1])i++;
+        }return ans;
+    }
+    
+};
